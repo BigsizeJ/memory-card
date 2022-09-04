@@ -59,7 +59,7 @@ const CardGrid = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 30px;
+  padding: 50px 30px;
   display: grid;
   grid-template-columns: repeat(6, max-content);
   place-content: center;

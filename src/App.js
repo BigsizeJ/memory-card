@@ -9,6 +9,7 @@ import Collection from "./components/util/Collection";
 import Footer from "./components/Footer";
 
 const Container = styled.div`
+  position: relative;
   min-width: 100%;
   min-height: 100%;
   background-color: ${Theme.baseColor};
