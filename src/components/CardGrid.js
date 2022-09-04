@@ -8,6 +8,7 @@ const fetchPokemon = async () => {
   for (let i = 1; i <= 12; i++) {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`, {
       method: "GET",
+      mode: "cors",
     });
     const data = await res.json();
     const dataName = data.name;
@@ -36,11 +37,6 @@ const CardGrid = () => {
       subscribe = false;
     };
   }, []);
-
-  const handleClick = (e) => {
-    console.log(e.target.parentNode.lastChild.textContent);
-    setPokemons(shuffleArray(pokemons));
-  };
 
   return (
     <Wrapper>
