@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { shuffleArray } from "./util/CardUtil";
 import { useCollection } from "./util/Collection";
@@ -41,10 +40,12 @@ const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-    transition: 200ms ease;
-    transform: scale(1.1);
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      transition: 200ms ease;
+      transform: scale(1.1);
+    }
   }
 `;
 

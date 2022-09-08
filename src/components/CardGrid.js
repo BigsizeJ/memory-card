@@ -60,8 +60,11 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(6, max-content);
   place-content: center;
   gap: 20px;
-  @media screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(2, max-content);
+  }
+  @media only screen and (max-width: 850px) and (min-width: 601px) {
+    grid-template-columns: repeat(3, max-content);
   }
 `;
 

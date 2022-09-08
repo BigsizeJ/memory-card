@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useScore } from "./util/Score";
 import { Theme } from "./util/Theme";
+import logo from "../asset/pokeball.png";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,9 +16,20 @@ const Wrapper = styled.div`
   }
 `;
 
+const Logo = styled.img`
+  width: 40px;
+`;
+
 const Text = styled.h1`
   color: ${Theme.fontColor};
 `;
+
+const HeaderTitle = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 const ScoreBoard = styled.div`
   display: flex;
   gap: 20px;
@@ -39,12 +51,15 @@ const HighScore = styled(Score)`
 `;
 
 export const Header = () => {
-  const [{ currentScore, setCurrentScore }] = useScore(0);
-  const [, { highScore, setHighScore }] = useScore(0);
+  const [{ currentScore }] = useScore(0);
+  const [, { highScore }] = useScore(0);
 
   return (
     <Wrapper>
-      <Text>PokeMemory</Text>
+      <HeaderTitle>
+        <Logo src={logo}></Logo>
+        <Text>PokeMemory</Text>
+      </HeaderTitle>
       <ScoreBoard>
         <CurrentScore>Current score: {currentScore}</CurrentScore>
         <HighScore>High score: {highScore}</HighScore>
